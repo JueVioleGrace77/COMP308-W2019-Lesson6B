@@ -1,0 +1,30 @@
+<% include ../partials/header.ejs %>
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-offset-4 col-md-4">
+            <h1>Please Login</h1>
+            <form method="POST">
+                <fieldset class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" class="form-control"
+                    name="username" placeholder="Enter User Name" required>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="password">Password</label>
+                    <input type="text" class="form-control"   
+                    name="password" placeholder="Enter Password" required>
+                    or
+                    <a href="/register">Register Here</a>
+                </fieldset>
+                <fieldset class="form-group">
+                    <input type="submit" class="btn btn-success" value="Login">
+                    <a href ="/"></a>
+                        <input type="button" class="btn btn-warning" value="Cancel">
+                    </a>a>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</main>
+<% include ../partials/footer.ejs %>

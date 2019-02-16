@@ -5,11 +5,11 @@ let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
-//modules for authentication
+// modules for authentication
 let session = require('express-session');
 let passport = require('passport');
 let passportLocal = require('passport-local');
-let localStrategy = passport.Strategy;
+let localStrategy = passportLocal.Strategy;
 let flash = require('connect-flash');
 
 // database setup
@@ -59,11 +59,11 @@ app.use(passport.session());
 // passport authentication
 
 // create a UserModel
-let userModel = require('..models/users');
+let userModel = require('../models/user');
 let User = userModel.User;
 
 // implement user authentican strategy
-passport.user(User.createStrategy());
+passport.use(User.createStrategy());
 
 // serialized and deserialized the user info
 passport.serializeUser(User.serializeUser());
