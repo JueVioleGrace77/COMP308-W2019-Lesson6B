@@ -59,10 +59,15 @@ app.use(passport.session());
 // passport authentication
 
 // create a UserModel
+let userModel = require('..models/users');
+let User = userModel.User;
 
 // implement user authentican strategy
+passport.user(User.createStrategy());
 
 // serialized and deserialized the user info
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.use('/', indexRouter);
 app.use('/contact-list', contactRouter);
